@@ -16,11 +16,11 @@ const Context = ({ children }) => {
 	// const [products, setProducts] = useState([]);
 
 	// useEffect(() => {
-	//   async function fetchData() {
-	//     const { data } = await axios.get(`https://fakestoreapi.com/products`);
-	//     setProducts(data);
-	//   }
-	//   fetchData();
+	// 	async function fetchData() {
+	// 		const data = await axios.get(`https://fakestoreapi.com/products`);
+	// 		setProducts(data.data);
+	// 	}
+	// 	fetchData();
 	// }, []);
 
 	const products = [...Array(20)].map(() => ({
@@ -33,11 +33,11 @@ const Context = ({ children }) => {
 		ratings: faker.random.arrayElement([1, 2, 3, 4, 5]),
 	}));
 
-	console.log(products);
 	const [state, dispatch] = useReducer(cartReducer, {
 		products: products,
 		cart: [],
 	});
+
 	// const [productState, productDispatch] = useReducer(productReducer, {
 	// 	byStock: false,
 	// 	byDelivery: false,

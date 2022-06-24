@@ -4,22 +4,22 @@ import SingleProduct from "./SingleProduct";
 import Filters from "./Filters";
 import "./Styles.css";
 function Home() {
-  const {
-    state: { products },
-  } = CartState();
+	const {
+		state: { products },
+	} = CartState();
 
-  console.log("the products");
-  console.log(products);
-  return (
-    <div>
-      <div className="productContainer">
-        <Filters />
-        {products.map((product) => {
-          return <SingleProduct product={product} key={product.id} />;
-        })}
-      </div>
-    </div>
-  );
+	console.log("the products");
+	console.log(products);
+	return (
+		<div>
+			<div className="productContainer">
+				<Filters />
+				{products.map((product) => {
+					return <SingleProduct product={product} key={product.id} />;
+				})}
+			</div>
+		</div>
+	);
 }
 
 export default Home;
