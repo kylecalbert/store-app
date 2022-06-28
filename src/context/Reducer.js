@@ -16,6 +16,9 @@ export const cartReducer = (state, action) => {
 						: item.qty
 				),
 			};
+
+		case "SET_PRODUCTS":
+			return { ...state, products: action.payload };
 		default:
 			return state;
 	}

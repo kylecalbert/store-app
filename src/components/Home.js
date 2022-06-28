@@ -8,8 +8,6 @@ function Home() {
 		state: { products },
 	} = CartState();
 
-	console.log("the products");
-	console.log(products);
 	return (
 		<div>
 			<div className="productContainer">
