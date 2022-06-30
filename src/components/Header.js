@@ -2,6 +2,8 @@ import React from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import { AiFillDelete } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import "./styles.css";
+
 import {
 	Badge,
 	Button,
@@ -12,11 +14,14 @@ import {
 	Navbar,
 } from "react-bootstrap";
 import { CartState } from "../context/Context";
+
 const Header = () => {
 	const {
 		state: { cart },
 		dispatch,
+		productDispatch,
 	} = CartState();
+
 	return (
 		<Navbar bg="dark" variant="dark" style={{ height: 80 }}>
 			<Container>
@@ -28,6 +33,12 @@ const Header = () => {
 						style={{ width: 500 }}
 						placeholder="search a product"
 						className="m-auto"
+						onChange={(e) => {
+							productDispatch({
+								type: "FILTER_BY_SEARCH",
+								payload: e.target.value,
+							});
+						}}
 					/>
 				</Navbar.Text>
 				<Nav>
